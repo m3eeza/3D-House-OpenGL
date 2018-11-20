@@ -621,7 +621,7 @@ void drawCupboard() {
 
 	glPushMatrix();
 	glColor3f(0.25, 0.1, 0);
-	glTranslatef(0.08, 1.28, 0.88);
+	glTranslatef(0.08, 1.30, 0.88);
 	glScalef(0.3, .3, .3);
 	gluSphere(gluNewQuadric(), .04, 100, 100);
 	glPopMatrix();
@@ -635,11 +635,28 @@ void drawCupboard() {
 
 	glPushMatrix();
 	glColor3f(0.25, 0.1, 0);
-	glTranslatef(0.08, 1.28, 0.82);
+	glTranslatef(0.08, 1.30, 0.82);
 	glScalef(0.3, .3, .3);
 	gluSphere(gluNewQuadric(), .04, 100, 100);
 	glPopMatrix();
 
+
+}
+
+void drawLowerKitchen() {
+	glPushMatrix();
+	glColor3f(0.3, 0.1, 0);
+	glTranslated(0.125, 0.3, 0.5);
+	glScaled(0.25, 0.5, 1);
+	glutSolidCube(1.0);
+	glPopMatrix();
+
+	glPushMatrix();
+	glColor3f(0.3, 0.1, 0);
+	glTranslated(0.6, 0.3, 0.125);
+	glScaled(0.75, 0.5, 0.25);
+	glutSolidCube(1.0);
+	glPopMatrix();
 
 }
 void Display() {
@@ -647,7 +664,7 @@ void Display() {
 	setupLights();
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-	glColor3f(0.3, 0.1, 0.0);
+	/*glColor3f(0.3, 0.1, 0.0);
 	glPushMatrix();
 	glTranslated(0.4, 0.4, 0.6);
 	glRotated(45, 0, 0, 1);
@@ -669,7 +686,7 @@ void Display() {
 	glPushMatrix();
 	glTranslated(0.4, 0.0, 0.4);
 	drawTable(0.6, 0.02, 0.02, 0.3);
-	glPopMatrix();
+	glPopMatrix();*/
 	
 	glPushMatrix();
 	glColor3f(0, 0, 0.1);
@@ -714,6 +731,7 @@ void Display() {
 	drawMonster();
 	drawVanity();
 	drawCupboard();
+	drawLowerKitchen();
 
 	glFlush();
 }
